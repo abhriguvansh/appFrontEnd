@@ -9,6 +9,7 @@ export default class Home extends Component {
             <Grid>
                 <div class="jumbotron jumbotron-fluid" style={{background: `ff6961`}}>
                     <div class="container-fluid">
+                        <h2 align="center">Meet People Whose Lives Have Been Changed by NeveraLone</h2>
                     </div>
                 </div>
 

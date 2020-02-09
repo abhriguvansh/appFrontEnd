@@ -37,10 +37,11 @@ export default function Login(props) {
             };
             event.preventDefault();
             alert("Account Created");
+            window.location = "/"
         } catch (e) {
             alert(e.message);
         }
-        this.context.router.push("/")
+
     }
 
 

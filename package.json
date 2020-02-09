@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "gulp-print": "^5.0.0",
+    "mdbreact": "^4.25.1",
     "react": "^16.2.0",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.2.0",

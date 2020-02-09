@@ -13,9 +13,22 @@ export default function Login(props) {
     async function handleSubmit(event) { //handle login req
         event.preventDefault();
         try {
-            await
-                // server call to signIn(User, password);
-            alert("Logged in");
+            var xhr = new XMLHttpRequest();
+            let json = JSON.stringify({username: User, password: password});
+            xhr.open("POST", 'http://localhost:8080/login')
+            xhr.send(json);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE){
+                    alert("logged in");
+                }
+                else{
+                    alert("error");
+                }
+            }
+            //await
+            // server call to signIn(User, password);
+            //alert("Logged in");
         } catch (e) {
             alert(e.message);
         }

@@ -7,6 +7,7 @@ import Signup from './components/Signup';
 import Create from './components/Create';
 import Login from "./components/Login";
 import Navbar from './components/CustomNavbar';
+import view from "./components/profile";
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
             <Route path="/signup" component={Signup} />
             <Route path="/create" component={Create} />
             <Route path="/login" exact component={Login} />
+            <Route path="/project" exact component={view} />
           </div>
         </Router>
     );
