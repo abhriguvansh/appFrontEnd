@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, FormGroup, FormControl, Form, ControlLabel } from "react-bootstrap";
 import "./Login.css";
+import {Link} from "react-router-dom";
 
 export default function Login(props) {
     const [projectName, setprojectName] = useState("");
@@ -40,6 +41,11 @@ export default function Login(props) {
                         type="Loan"
                     />
                 </FormGroup>
+                <Link to="/about">
+                    <button class="button" style={{vertical:`middle`}}>
+                        Start loaning today!
+                    </button>
+                </Link>
 
                 <Button block bsSize="large" disabled={!validateForm()} type="submit">
                     Create
