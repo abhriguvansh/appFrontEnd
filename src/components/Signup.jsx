@@ -1,83 +1,81 @@
-import React, { Component } from 'react'
-import { Grid, Col, Image } from 'react-bootstrap';
-import './Signup.css';
+import React, { useState } from "react";
+import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import "./Signup.css";
 
+export default function Login(props) {
+    const [fName, setFName] = useState("");
+    const [lName, setLName] = useState("");
+    const [User, setUser] = useState("");
+    const [password, setPassword] = useState("");
+    const [passVer, verifyPass] = useState("");
 
-
-export default class About extends Component {
-
- constructor(props) {
-    super(props);
-    this.state = {firstName: '', lastName: '', username: '', password: '', passwordver: ''};
-
-
-    this.handleFirstNameChange = this.handleFirstNameChange.bind(this);
-    this.handleLastNameChange = this.handleLastNameChange.bind(this);
-    this.handleUsernameChange = this.handleUsernameChange.bind(this);
-    this.handlePasswordChange = this.handlePasswordChange.bind(this);
-    this.handlePasswordVerChange = this.handlePasswordVerChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-
-  handleFirstNameChange(event){
-    this.setState({firstName: event.target.value});
-  }
-
-  handleLastNameChange(event){
-      this.setState({lastName: event.target.value});
+    function validateForm() {
+        return User.length > 0 && password.length > 0 && fName.length > 0 && lName.length > 0 && passVer > 0;
     }
 
-  handleUsernameChange(event){
-       this.setState({username : event.target.value});
-  }
-  handlePasswordChange(event){
-         this.setState({password : event.target.value});
+    async function handleSubmit(event) { //handle login req
+        event.preventDefault();
+        try {
+            await
+                // server call to signIn(User, password);
+                alert("Logged in");
+        } catch (e) {
+            alert(e.message);
+        }
     }
-    handlePasswordVerChange(event){
-           this.setState({passwordver : event.target.value});
-      }
 
 
-
-
-  handleSubmit(event) {
-    var xhr = new XMLHttpRequest();
-    xhr.addEventListener('submit', () =>{})
-    xhr.open('POST', 'localhost:8080')
-    xhr.send(JSON.stringify({firstName: this.state.firstName, lastName: this.state.lastName, username: this.state.username, password: this.state.password, passwordverification: this.state.passwordver}))
-    //console.log(this.state.firstName)
-    alert('A name was submitted: ' + this.state.firstName + ' ' + this.state.lastName + ' ' + this.state.passwordver);
-    event.preventDefault();
-  }
-
-  render() {
     return (
-      <div>
-      <form onSubmit={this.handleSubmit}>
-              <label>
-                First Name:
-                <input type="text" value={this.state.firstName} onChange={this.handleFirstNameChange} />
-              </label>
-              <label>
-                 Last Name:
-                 <input type="text" value={this.state.lastName} onChange={this.handleLastNameChange} />
-              </label>
-              <label>
-              Username:
-              <input type="text" value={this.state.username} onChange={this.handleUsernameChange} />
-              </label>
-              <label>
-              Password:
-               <input type="password" value={this.state.password} onChange={this.handlePasswordChange} />
-               </label>
-               <label>
-               Verify your password:
-                <input type="password" value={this.state.passwordver} onChange={this.handlePasswordVerChange} />
-                </label>
-              <input type="submit" value="Submit" />
+        <div className="Login">
+            <form onSubmit={handleSubmit}>
+                <FormGroup controlId="fName" bsSize="large">
+                    <ControlLabel>First Name</ControlLabel>
+                    <FormControl
+                        autoFocus
+                        type="First Name"
+                        value={fName}
+                        onChange={e => setFName(e.target.value)}
+                    />
+                </FormGroup>
+                <FormGroup controlId="lName" bsSize="large">
+                    <ControlLabel>Last Name</ControlLabel>
+                    <FormControl
+                        autoFocus
+                        type="Last Name"
+                        value={lName}
+                        onChange={e => setLName(e.target.value)}
+                    />
+                </FormGroup>
+                <FormGroup controlId="User" bsSize="large">
+                    <ControlLabel>User</ControlLabel>
+                    <FormControl
+                        autoFocus
+                        type="User"
+                        value={User}
+                        onChange={e => setUser(e.target.value)}
+                    />
+                </FormGroup>
+                <FormGroup controlId="password" bsSize="large">
+                    <ControlLabel>Password</ControlLabel>
+                    <FormControl
+                        autoFocus
+                        type="Password"
+                        value={password}
+                        onChange={e => setPassword(e.target.value)}
+                    />
+                </FormGroup>
+                <FormGroup controlId="verfPass" bsSize="large">
+                    <ControlLabel>Verify Password</ControlLabel>
+                    <FormControl
+                        type="Verify Password"
+                        value={passVer}
+                        onChange={e => verifyPass(e.target.value)}
+                    />
+                </FormGroup>
+                <Button block bsSize="large" disabled={!validateForm()} type="submit">
+                    Login
+                </Button>
             </form>
-            </div>
-    )
-  }
+        </div>
+    );
 }

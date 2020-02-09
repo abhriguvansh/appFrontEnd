@@ -8,8 +8,8 @@ export default class Home extends Component {
     return (
       <Grid>
         <Jumbotron>
-          <h2>Welcome to CodeLife</h2>
-          <p>This is how to build a website with React, React-Router & React-Bootstrap</p>
+          <h2>Never aLoan</h2>
+          <p>People with great ideas are kept silent without proper funding</p>
           <Link to="/about">
             <Button bsStyle="primary">Learn More</Button>
           </Link>
