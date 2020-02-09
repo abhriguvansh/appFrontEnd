@@ -3,6 +3,7 @@ import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './CustomNavbar.css'
 
+
 export default class CustomNavbar extends Component {
   render() {
     return (
@@ -25,7 +26,7 @@ export default class CustomNavbar extends Component {
               Login
             </NavItem>
             <NavItem eventKey={4} componentClass={Link} href="/create" to="/create">
-              Create a Fund
+              Request Loan
             </NavItem>
           </Nav>
         </Navbar.Collapse>

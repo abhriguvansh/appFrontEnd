@@ -13,9 +13,7 @@ export default function Login(props) {
     async function handleSubmit(event) { //handle login req
         event.preventDefault();
         try {
-            await
-                // server call to signIn(projectName, Loan);
-                alert("Logged in");
+
         } catch (e) {
             alert(e.message);
         }
