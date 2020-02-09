@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import {Button, ControlLabel, FormControl, FormGroup} from "react-bootstrap";
 import "./Signup.css";
+import Redirect from "react-router-dom/Redirect";
 
 export default function Login(props) {
     const [fName, setFName] = useState("");
@@ -34,12 +35,12 @@ export default function Login(props) {
             xhr.onerror = function () {
                 console.log(xhr.response);
             };
-
             event.preventDefault();
             alert("Account Created");
         } catch (e) {
             alert(e.message);
         }
+        this.context.router.push("/")
     }
 
 
