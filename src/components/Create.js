@@ -41,15 +41,12 @@ export default function Login(props) {
                         type="Loan"
                     />
                 </FormGroup>
-                <Link to="/about">
-                    <button class="button" style={{vertical:`middle`}}>
-                        Start loaning today!
-                    </button>
-                </Link>
 
-                <Button block bsSize="large" disabled={!validateForm()} type="submit">
-                    Create
-                </Button>
+                <Link to="/">
+                    <Button block bsSize="large" disabled={!validateForm()} type="submit">
+                        Create
+                    </Button>
+                </Link>
             </form>
         </div>
     );

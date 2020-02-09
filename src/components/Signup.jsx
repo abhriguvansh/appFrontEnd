@@ -24,7 +24,7 @@ export default function Login(props) {
                 lastName: lName,
                 username: User,
                 password: password,
-                passwordverification:verifyPass
+                passwordverification: verifyPass
             });
             xhr.open("POST", 'http://localhost:8080/about')
             xhr.send(json);
@@ -34,10 +34,9 @@ export default function Login(props) {
             xhr.onerror = function () {
                 console.log(xhr.response);
             };
-            xhr.send();
 
             event.preventDefault();
-            alert("Logged in");
+            alert("Account Created");
         } catch (e) {
             alert(e.message);
         }
@@ -83,14 +82,16 @@ export default function Login(props) {
                         onChange={e => setPassword(e.target.value)}
                     />
                 </FormGroup>
-                <FormGroup controlId="verfPass" bsSize="large">
+                <FormGroup controlId="vpassword" bsSize="large">
                     <ControlLabel>Verify Password</ControlLabel>
                     <FormControl
-                        type="Verify Password"
+                        autoFocus
+                        type="vpassword"
                         value={passVer}
                         onChange={e => verifyPass(e.target.value)}
                     />
                 </FormGroup>
+
                 <Button block bsSize="large" disabled={!validateForm()} type="submit">
                     Create Account
                 </Button>
