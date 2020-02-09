@@ -14,17 +14,15 @@ export default function Login(props) {
     }
 
     async function handleSubmit(event) { //handle login req
-        event.preventDefault();
+        //event.preventDefault();
         try {
             var xhr = new XMLHttpRequest();
-            xhr.addEventListener('submit', () => {
-            })
             let json = JSON.stringify({
                 firstName: fName,
                 lastName: lName,
                 username: User,
                 password: password,
-                passwordverification:verifyPass
+                passwordverification: passVer
             });
             xhr.open("POST", 'http://localhost:8080/about')
             xhr.send(json);
@@ -34,10 +32,10 @@ export default function Login(props) {
             xhr.onerror = function () {
                 console.log(xhr.response);
             };
-            xhr.send();
 
             event.preventDefault();
             alert("Logged in");
+
         } catch (e) {
             alert(e.message);
         }
@@ -86,7 +84,7 @@ export default function Login(props) {
                 <FormGroup controlId="verfPass" bsSize="large">
                     <ControlLabel>Verify Password</ControlLabel>
                     <FormControl
-                        type="Verify Password"
+                        type="Password"
                         value={passVer}
                         onChange={e => verifyPass(e.target.value)}
                     />

@@ -13,9 +13,20 @@ export default function Login(props) {
     async function handleSubmit(event) { //handle login req
         event.preventDefault();
         try {
-            await
+            var xhr = new XMLHttpRequest();
+            let json = JSON.stringify({username: User, password: password});
+            xhr.open("POST", 'http://localhost:8080/login')
+            xhr.send(json);
+
+            if (xhr.response != null){
+                alert("Logged In");
+            }
+            else{
+                alert("error");
+            }
+            //await
                 // server call to signIn(User, password);
-            alert("Logged in");
+            //alert("Logged in");
         } catch (e) {
             alert(e.message);
         }

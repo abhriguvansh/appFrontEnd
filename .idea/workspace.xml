@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2063d0d3-ba56-432c-a50b-a249feea3e11" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/About.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/About.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomNavbar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomNavbar.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/News.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/News.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Signup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Signup.jsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
