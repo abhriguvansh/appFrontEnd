@@ -18,11 +18,13 @@ export default function Login(props) {
             xhr.open("POST", 'http://localhost:8080/login')
             xhr.send(json);
 
-            if (xhr.response != null){
-                alert("Logged In");
-            }
-            else{
-                alert("error");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE){
+                    alert("logged in");
+                }
+                else{
+                    alert("error");
+                }
             }
             //await
                 // server call to signIn(User, password);
