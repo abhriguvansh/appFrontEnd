@@ -10,7 +10,7 @@ export default function Login(props) {
     const [passVer, verifyPass] = useState("");
 
     function validateForm() {
-        return User.length > 0 && password.length > 0 && fName.length > 0 && lName.length > 0 && passVer > 0;
+        return User.length > 0 && password.length > 0 && fName.length > 0 && lName.length > 0 && passVer.length > 0;
     }
 
     async function handleSubmit(event) { //handle login req
@@ -19,16 +19,23 @@ export default function Login(props) {
             var xhr = new XMLHttpRequest();
             xhr.addEventListener('submit', () => {
             })
-            xhr.open('POST', 'localhost:8080')
-            xhr.send(JSON.stringify({
+            let json = JSON.stringify({
                 firstName: fName,
                 lastName: lName,
                 username: User,
                 password: password,
-                passwordverification: passVer
-            }));
-            //console.log(this.state.firstName)
-            alert('A name was submitted: ' + fName + ' ' + lName + ' ' + passVer);
+                passwordverification:verifyPass
+            });
+            xhr.open("POST", 'http://localhost:8080/about')
+            xhr.send(json);
+
+            xhr.onload = () => alert(xhr.response + " test");
+
+            xhr.onerror = function () {
+                console.log(xhr.response);
+            };
+            xhr.send();
+
             event.preventDefault();
             alert("Logged in");
         } catch (e) {
@@ -85,7 +92,7 @@ export default function Login(props) {
                     />
                 </FormGroup>
                 <Button block bsSize="large" disabled={!validateForm()} type="submit">
-                    Login
+                    Create Account
                 </Button>
             </form>
         </div>

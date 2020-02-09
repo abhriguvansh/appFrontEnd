@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2063d0d3-ba56-432c-a50b-a249feea3e11" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/Create.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Create.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CustomNavbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CustomNavbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/News.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/News.jsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Signup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Signup.jsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -65,7 +71,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1581195747583</updated>
-      <workItem from="1581220941793" duration="9237000" />
+      <workItem from="1581220941793" duration="13253000" />
     </task>
     <task id="LOCAL-00001" summary="look good type shit">
       <created>1581235451561</created>
