@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import React, {useState} from "react";
+import {Button, ControlLabel, FormControl, FormGroup} from "react-bootstrap";
 import "./Signup.css";
 
 export default function Login(props) {
@@ -16,9 +16,21 @@ export default function Login(props) {
     async function handleSubmit(event) { //handle login req
         event.preventDefault();
         try {
-            await
-                // server call to signIn(User, password);
-                alert("Logged in");
+            var xhr = new XMLHttpRequest();
+            xhr.addEventListener('submit', () => {
+            })
+            xhr.open('POST', 'localhost:8080')
+            xhr.send(JSON.stringify({
+                firstName: fName,
+                lastName: lName,
+                username: User,
+                password: password,
+                passwordverification: passVer
+            }));
+            //console.log(this.state.firstName)
+            alert('A name was submitted: ' + fName + ' ' + lName + ' ' + passVer);
+            event.preventDefault();
+            alert("Logged in");
         } catch (e) {
             alert(e.message);
         }
